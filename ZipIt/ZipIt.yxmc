@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="10.5">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.ControlParam.ControlParam">
+        <Position x="54" y="54" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>File To Zip</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RunCommand.RunCommand">
+        <Position x="258" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OutputConfiguration>
+            <Configuration />
+          </OutputConfiguration>
+          <InputConfiguration>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="21">null</File>
+              <FormatSpecificOptions>
+                <TrimWhiteSpace>Unset</TrimWhiteSpace>
+                <LineEndStyle>Unset</LineEndStyle>
+                <AllowLongLines>Unset</AllowLongLines>
+                <CodePage>28591</CodePage>
+                <AllowShortLines>Unset</AllowShortLines>
+                <FlatFileXML>
+                  <flatfile version="1">
+                    <file eoltype="crlf" allowShortLines="f" allowLongLines="t" trimWhiteSpace="t" />
+                    <fields>
+                      <field name="Field_1" type="V_String" length="1" />
+                    </fields>
+                  </flatfile>
+                </FlatFileXML>
+              </FormatSpecificOptions>
+            </Configuration>
+          </InputConfiguration>
+          <ProgramName>winrar</ProgramName>
+          <Arguments><![CDATA[ a -u -afzip -ep path\file.ZIP path\file]]></Arguments>
+          <WorkingDir />
+          <RunMinimized value="True" />
+          <RunSilent value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Run winrar</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="1" source="File: C:\Lemoo_YX\null" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRunCommand" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="162" y="54" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+        <Position x="54" y="126" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="162" y="126" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection name="#1">
+      <Origin ToolID="9" Connection="Question" />
+      <Destination ToolID="11" Connection="Question" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="11" Connection="Action" />
+      <Destination ToolID="10" Connection="Action" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="13" Connection="Action" />
+      <Destination ToolID="10" Connection="Action" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="12" Connection="Question" />
+      <Destination ToolID="13" Connection="Question" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="False" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="False" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Vertical</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>ControlParam.File To Zip</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Text Box (12)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="False" />
+      <Name>ZipIt</Name>
+      <Description>Compress file to Zip</Description>
+      <RootToolName>Zip</RootToolName>
+      <ToolVersion>1</ToolVersion>
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags>Compress zip compact</SearchTags>
+      <Author>Lemuel Castro</Author>
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions>
+        <NoCondition>
+          <Type>NoCondition</Type>
+          <Description>(Always Run)</Description>
+          <True>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="11" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="True" />
+              <ReplaceText>file</ReplaceText>
+              <Destination>10/Arguments</Destination>
+            </Action>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="13" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="True" />
+              <ReplaceText>path</ReplaceText>
+              <Destination>10/Arguments</Destination>
+            </Action>
+          </True>
+        </NoCondition>
+      </Actions>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Config</Description>
+          <Name>Tab (1)</Name>
+          <ToolId value="1" />
+          <Questions>
+            <Question>
+              <Type>ControlParam</Type>
+              <Description>File to Zip</Description>
+              <Name>File To Zip</Name>
+              <ToolId value="9" />
+            </Question>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>Path</Description>
+              <Name>Text Box (12)</Name>
+              <ToolId value="12" />
+              <Default />
+              <Password value="False" />
+              <Multiline value="False" />
+              <Hidden value="False" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImage>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</MacroImage>
+      <MacroInputs />
+      <MacroOutputs />
+      <BatchMacro>
+        <OutputMode>AutoByName</OutputMode>
+        <ControlParams>
+          <ControlParam>
+            <Name>File To Zip</Name>
+            <Description>File to Zip</Description>
+          </ControlParam>
+        </ControlParams>
+      </BatchMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools />
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
